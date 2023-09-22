@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+    align-items: center;
+    justify-content: center;
+}
+
+#main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-button {
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.git {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text {
+    color: white;
+}
+
+.home-text {
+    color: white;
+}
+
+.start-box {
+    margin-top: 100px;
+}
+
+.pic-box-1 {
+    /* border: 2px solid red; */
+    display: inline-block;
+    /* max-width: 100%;
+    max-height: 400px; */
+    height: 450px;
+}
+
+.pic-box-2 {
+    /* border: 2px solid yellow; */
+    display: inline-block;
+    /* max-width: 100%;
+    max-height: 400px; */
+    height: 450px;
+}
+
+.git-home {
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.git-picgrader {
+    margin-top: 50px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.block1 {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block2 {
+    margin-top: 100px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.st-button {
+    margin-right: 0px;
+    background-color: darkred;
+    color: white;
+    border-radius: 25px;
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.nd-button {
+    margin-right: 0px;
+    background-color: purple;
+    color: white;
+    border-radius: 25px;
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+}
