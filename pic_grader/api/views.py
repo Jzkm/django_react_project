@@ -47,8 +47,8 @@ class GetPerson(APIView):
             if len(person) > 0:
                 data = PersonSerializer(person[0]).data
                 return Response(data,status=status.HTTP_200_OK)
-            return Response("Nie ma takiej osoby",status=status.HTTP_404_NOT_FOUND)
-        return Response("Podaj kod osoby",status=status.HTTP_400_BAD_REQUEST)
+            return Response("Person not found",status=status.HTTP_404_NOT_FOUND)
+        return Response("Enter person code",status=status.HTTP_400_BAD_REQUEST)
     
 class GetRandomCode(APIView):
     permission_classes = [HasAPIKey]
@@ -98,7 +98,7 @@ class PersonUpdateRating(generics.CreateAPIView):
                 person.save(update_fields=['rank'])
             #     return Response(PersonSerializer(person).data, status=status.HTTP_200_OK)
             else:
-                return Response({'Nie ma takiej osoby'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'Person not found'}, status=status.HTTP_404_NOT_FOUND)
             
             queryset = Person.objects.filter(code=enymycode)
             if queryset.exists():
@@ -108,10 +108,10 @@ class PersonUpdateRating(generics.CreateAPIView):
                 person.save(update_fields=['rank'])
                 return Response(PersonSerializer(person).data, status=status.HTTP_200_OK)
             else:
-                return Response({'Nie ma takiej osoby'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'Person not found'}, status=status.HTTP_404_NOT_FOUND)
 
         else:
-            return Response({'Zły serializer'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'Bad serializer'}, status=status.HTTP_400_BAD_REQUEST)
             
                 
             

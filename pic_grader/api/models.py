@@ -22,7 +22,7 @@ class Person(models.Model):
     added_by = models.CharField(max_length=20,default='guest',unique=False)
 
 class Exhibition(models.Model):
-    name = models.CharField(max_length=30,default='Twoja nazwa',unique=True)
-    password = models.CharField(max_length=30,default='Tajne haslo',unique=False)
+    name = models.CharField(max_length=30,default='Your nazwa',unique=True)
+    password = models.CharField(max_length=30,default='Secret password',unique=False)
     added_at = models.DateTimeField(auto_now_add=True)
     ex_persons = models.ForeignKey(Person, on_delete=models.CASCADE)
