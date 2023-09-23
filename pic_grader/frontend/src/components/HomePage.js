@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Grid from "@mui/material/Grid"
 import { useNavigate } from "react-router-dom";
 import { responsiveFontSizes } from '@mui/material';
+import sec from "secrets.json"
 
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
     const handleclick = () => {
       fetch("/api/get_two_random_codes", {
         headers: {
-            'X-API-Key': 'xdxd'  // Przekaż rzeczywisty klucz API
+            'X-API-Key': sec.SECRET_KEY  
         }
     }).then((response) => 
         response.json()

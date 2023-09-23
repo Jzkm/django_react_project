@@ -1,6 +1,7 @@
 import React, {useState, Component,useEffect } from 'react'
 import Grid from "@mui/material/Grid"
 import { useLocation, useParams,useNavigate } from "react-router-dom";
+import sec from "secrets.json"
 
 export default function PicChoose() {
   const { ppCodes } = useParams();
@@ -19,7 +20,7 @@ export default function PicChoose() {
   const getimage = (ktory) => {
     fetch("/api/get_person" + "?pcode=" + code[ktory], {
       headers: {
-          'X-API-Key': 'xdxd'  // Przekaż rzeczywisty klucz API
+          'X-API-Key': sec.SECRET_KEY  
       }
   })
     .then((response) => 
@@ -39,7 +40,7 @@ export default function PicChoose() {
   const handleclick = (ktory) => {
     fetch("/api/get_person" + "?pcode=" + code[ktory], {
       headers: {
-          'X-API-Key': 'xdxd'  // Przekaż rzeczywisty klucz API
+          'X-API-Key': sec.SECRET_KEY
       }
   })
     .then((response) => response.json())
@@ -54,7 +55,7 @@ export default function PicChoose() {
 
         fetch("/api/get_person" + "?pcode=" + code[ktory2], {
           headers: {
-              'X-API-Key': 'xdxd'  // Przekaż rzeczywisty klucz API
+              'X-API-Key': sec.SECRET_KEY
           }
       })
         .then((response2) => response2.json())
@@ -63,7 +64,7 @@ export default function PicChoose() {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'X-API-Key': 'xdxd'
+              'X-API-Key': sec.SECRET_KEY
             },
           })
           .then((response5) => response5.json())
@@ -75,7 +76,7 @@ export default function PicChoose() {
             headers: {
                "Content-Type": "application/json",
                'X-CSRFToken': csrfToken,
-               'X-API-Key': 'xdxd'
+               'X-API-Key': sec.SECRET_KEY
               },
             body: JSON.stringify({
               code: data.code,
@@ -91,7 +92,7 @@ export default function PicChoose() {
             // pisz tu kod teraz
             fetch("/api/get_two_random_codes", {
               headers: {
-                  'X-API-Key': 'xdxd'  // Przekaż rzeczywisty klucz API
+                  'X-API-Key': sec.SECRET_KEY
               }
           })
             .then((response4) => response4.json())
